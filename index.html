@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Joyeux anniversaire Amina Sall</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,400&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg1:#2a0a3d;--bg2:#5b1a6e;--text:#fff6ea;--card:rgba(255,246,234,.1);
+  --pink:#ff4f9a;--gold:#ffc83d;--teal:#2ee6c5;
+  --serif:"Fraunces",Georgia,serif;--sans:"Nunito",system-ui,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#2a0a3d;--bg2:#5b1a6e;--text:#fff6ea}}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg1:#4a1262;--bg2:#8a2a86;--text:#fff8ef;--card:rgba(255,255,255,.14)}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--sans);color:var(--text);background:var(--bg1);
+  background:linear-gradient(160deg,var(--bg1),var(--bg2),#a8326f,var(--bg2),var(--bg1));background-size:300% 300%;
+  animation:bg 18s ease infinite;overflow-x:hidden;min-height:100vh}
+@keyframes bg{0%,100%{background-position:0 0}50%{background-position:100% 100%}}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
+.stars i{position:fixed;width:3px;height:3px;border-radius:50%;background:#fff;animation:tw 3s infinite ease-in-out;z-index:0}
+@keyframes tw{0%,100%{opacity:.1;transform:scale(.6)}50%{opacity:1;transform:scale(1.6)}}
+.balloon{position:fixed;bottom:-140px;width:56px;height:70px;border-radius:50% 50% 48% 48%;z-index:1;
+  animation:rise linear infinite;opacity:.85}
+.balloon::after{content:"";position:absolute;left:50%;top:100%;width:1px;height:60px;background:rgba(255,255,255,.5)}
+@keyframes rise{0%{transform:translateY(0) translateX(0) rotate(-4deg)}50%{transform:translateY(-60vh) translateX(25px) rotate(4deg)}100%{transform:translateY(-130vh) translateX(-15px) rotate(-4deg)}}
+section{position:relative;z-index:2;max-width:720px;margin:0 auto;padding:64px 20px;text-align:center}
+.intro{position:fixed;inset:0;z-index:100;display:grid;place-items:center;text-align:center;padding:24px;
+  background:radial-gradient(circle at 50% 40%,var(--bg2),var(--bg1));transition:opacity .9s,transform .9s}
+.intro.gone{opacity:0;transform:scale(1.2);pointer-events:none}
+.gift{font-size:96px;display:block;animation:shake 1.6s infinite;cursor:pointer;background:none;border:0}
+@keyframes shake{0%,60%,100%{transform:rotate(0)}10%,30%,50%{transform:rotate(-10deg) scale(1.1)}20%,40%{transform:rotate(10deg) scale(1.1)}}
+.intro p{font-family:var(--serif);font-style:italic;font-size:1.4rem;margin:12px 0 22px}
+.btn{font:700 1.05rem var(--sans);color:#3a0d4d;background:var(--gold);border:0;border-radius:999px;padding:14px 30px;cursor:pointer;
+  box-shadow:0 0 0 0 rgba(255,200,61,.7);animation:pulse 2s infinite;transition:transform .2s}
+.btn:hover{transform:scale(1.07)}
+.btn:focus-visible,.mute:focus-visible,.gift:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+@keyframes pulse{70%{box-shadow:0 0 0 18px rgba(255,200,61,0)}100%{box-shadow:0 0 0 0 rgba(255,200,61,0)}}
+h1{font-family:var(--serif);margin:0;line-height:1}
+.hb{display:block;font-size:clamp(1.6rem,6vw,2.6rem);font-weight:700;color:var(--gold);margin-bottom:10px}
+.name{display:block;font-size:clamp(3.4rem,17vw,8rem);font-style:italic;font-weight:700}
+.name span{display:inline-block;animation:bounce 2.2s infinite ease-in-out;
+  background:linear-gradient(180deg,#fff,var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.name .sp{width:.3em}
+@keyframes bounce{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-.14em) rotate(-3deg)}}
+.sub{font-size:1.15rem;margin-top:18px;opacity:.9}
+.cake{margin:34px auto 12px;width:220px;position:relative;cursor:pointer}
+.candles{display:flex;justify-content:space-around;padding:0 24px;height:64px;align-items:flex-end}
+.candle{width:10px;height:34px;background:repeating-linear-gradient(45deg,#fff 0 6px,var(--pink) 6px 12px);border-radius:3px;position:relative}
+.flame{position:absolute;left:50%;bottom:100%;width:12px;height:22px;margin-left:-6px;border-radius:50% 50% 50% 50%/65% 65% 35% 35%;
+  background:radial-gradient(circle at 50% 70%,#fff 10%,var(--gold) 45%,#ff7a2f);transform-origin:50% 100%;
+  animation:flick .25s infinite alternate;filter:drop-shadow(0 0 8px var(--gold));transition:opacity .4s,transform .4s}
+@keyframes flick{from{transform:scale(1) rotate(-4deg)}to{transform:scale(.88,1.1) rotate(4deg)}}
+.candle.out .flame{opacity:0;transform:scale(0)}
+.candle.out::before{content:"";position:absolute;left:3px;bottom:100%;width:4px;height:4px;border-radius:50%;background:#ccc;animation:smoke 1.6s forwards}
+@keyframes smoke{to{transform:translateY(-50px) scale(5);opacity:0}}
+.tier{height:46px;border-radius:12px;margin:0 auto}
+.t1{width:150px;background:linear-gradient(var(--pink) 0 14px,#ffd9ea 14px);}
+.t2{width:210px;background:linear-gradient(var(--teal) 0 14px,#d6fff6 14px);height:56px}
+.plate{width:240px;height:10px;border-radius:50%;background:var(--gold);margin:0 auto}
+.hint{margin-top:18px;min-height:3.2em;font-size:1.05rem}
+.link{background:none;border:0;color:var(--gold);font:700 1rem var(--sans);text-decoration:underline;cursor:pointer}
+.poem{background:var(--card);border:1px solid rgba(255,255,255,.22);border-radius:28px;padding:40px 24px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.poem h2{font-family:var(--serif);font-size:2rem;margin:0 0 26px;color:var(--gold)}
+.stanza{margin:0 0 28px}
+.line{font-family:var(--serif);font-style:italic;font-size:1.22rem;line-height:1.7;opacity:0;transform:translateY(14px) scale(.97);filter:blur(5px);
+  transition:opacity .9s,transform .9s,filter .9s}
+.line.in{opacity:1;transform:none;filter:none}
+.sign{font-family:var(--serif);font-size:1.3rem;color:var(--pink);margin-top:10px}
+
+/* ===== Galerie ===== */
+.gallery h2{font-family:var(--serif);font-size:2rem;color:var(--gold);margin:0 0 22px}
+.gallery-frame{position:relative;max-width:620px;margin:0 auto;overflow:hidden;isolation:isolate;border:1px solid rgba(255,255,255,.3);
+  border-radius:28px;background:rgba(20,5,30,.35);box-shadow:0 18px 50px rgba(0,0,0,.3);aspect-ratio:4/3}
+.gallery-bg{position:absolute;inset:-30px;background-size:cover;background-position:center;
+  filter:blur(26px) brightness(.55) saturate(1.3);opacity:0;transition:opacity 1.2s ease;z-index:0}
+.gallery-bg.on{opacity:1}
+.gallery-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;visibility:hidden;
+  z-index:1;pointer-events:none;will-change:transform,opacity}
+.gallery-slide.active{opacity:1;visibility:visible;z-index:2;pointer-events:auto;
+  animation-duration:1.4s;animation-timing-function:cubic-bezier(.22,1,.36,1);animation-fill-mode:both}
+.gallery-slide.leaving{visibility:visible;opacity:0;z-index:1;animation:gOut 1s ease both}
+.gallery-slide.active.fx-zoom{animation-name:gZoom}
+.gallery-slide.active.fx-left{animation-name:gLeft}
+.gallery-slide.active.fx-right{animation-name:gRight}
+.gallery-slide.active.fx-rise{animation-name:gRise}
+.gallery-slide.active.fx-circle{animation-name:gCircle;animation-duration:1.6s}
+.gallery-slide.active.fx-flip{animation-name:gFlip}
+.gallery-slide.active.fx-blur{animation-name:gBlur}
+@keyframes gOut{from{opacity:1;transform:scale(1)}to{opacity:0;transform:scale(.94);filter:blur(6px)}}
+@keyframes gZoom{from{opacity:0;transform:scale(1.3);filter:blur(12px)}to{opacity:1;transform:none;filter:none}}
+@keyframes gLeft{from{opacity:0;transform:translateX(-18%) rotate(-3deg) scale(1.08)}to{opacity:1;transform:none}}
+@keyframes gRight{from{opacity:0;transform:translateX(18%) rotate(3deg) scale(1.08)}to{opacity:1;transform:none}}
+@keyframes gRise{from{opacity:0;transform:translateY(14%) scale(.9)}to{opacity:1;transform:none}}
+@keyframes gCircle{from{clip-path:circle(0% at 50% 50%);transform:scale(1.2)}to{clip-path:circle(80% at 50% 50%);transform:none}}
+@keyframes gFlip{from{opacity:0;transform:perspective(900px) rotateY(-75deg) scale(.88)}to{opacity:1;transform:perspective(900px) rotateY(0)}}
+@keyframes gBlur{from{opacity:0;filter:blur(18px) brightness(1.6);transform:scale(.96)}to{opacity:1;filter:none;transform:none}}
+.gallery-progress{position:absolute;left:0;right:0;bottom:0;height:4px;background:rgba(255,255,255,.15);z-index:5}
+.gallery-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--pink),var(--gold))}
+.gallery-frame.playing .gallery-progress span{animation:gProg 5s linear forwards}
+@keyframes gProg{to{width:100%}}
+.gallery-controls{display:flex;justify-content:center;align-items:center;gap:18px;margin-top:18px}
+.gallery-arrow,.gallery-toggle{width:44px;height:44px;border:1px solid rgba(255,255,255,.35);border-radius:50%;
+  background:var(--card);color:var(--text);font:700 1.15rem var(--sans);cursor:pointer;transition:background .2s,transform .2s}
+.gallery-arrow:hover,.gallery-toggle:hover{background:rgba(255,255,255,.22);transform:scale(1.06)}
+.gallery-arrow:focus-visible,.gallery-toggle:focus-visible,.gallery-dot:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.gallery-count{min-width:52px;font-weight:700}
+.gallery-dots{display:flex;justify-content:center;gap:9px;margin-top:16px}
+.gallery-dot{width:9px;height:9px;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.45);cursor:pointer;transition:transform .25s,background .25s}
+.gallery-dot.active{background:var(--gold);transform:scale(1.4)}
+
+.mute{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:12px;z-index:120;width:46px;height:46px;border-radius:50%;
+  border:0;background:var(--gold);font-size:1.3rem;cursor:pointer;display:none}
+.mute.on{display:block}
+footer{position:relative;z-index:2;text-align:center;padding:10px 20px 50px;font-size:1.6rem}
+footer span{display:inline-block;animation:bounce 1.6s infinite}
+footer span:nth-child(2){animation-delay:.2s}footer span:nth-child(3){animation-delay:.4s}footer span:nth-child(4){animation-delay:.6s}footer span:nth-child(5){animation-delay:.8s}
+@media (max-width:520px){.gallery-frame{aspect-ratio:3/4;border-radius:20px}.gallery h2{font-size:1.7rem}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.balloon{display:none}}
+</style>
+</head>
+<body>
+<canvas id="fx"></canvas>
+<div class="stars" id="stars"></div>
+<div id="balloons"></div>
+
+<div class="intro" id="intro">
+  <div>
+    <button class="gift" id="gift" aria-label="Ouvrir le cadeau">🎁</button>
+    <p>Quelqu’un a une surprise pour toi…</p>
+    <button class="btn" id="open">Ouvrir le cadeau</button>
+  </div>
+</div>
+<button class="mute" id="mute" aria-label="Couper ou remettre la musique">🔊</button>
+
+<section id="hero">
+  <h1><span class="hb">Joyeux anniversaire</span><span class="name" id="name" aria-label="Amina Sall"></span></h1>
+  <p class="sub">Aujourd’hui, c’est ton jour. Clique n’importe où pour lancer des feux d’artifice 🎆</p>
+</section>
+
+<section>
+  <div class="cake" id="cake" role="button" tabindex="0" aria-label="Souffler les bougies">
+    <div class="candles" id="candles"></div>
+    <div class="tier t1"></div><div class="tier t2"></div><div class="plate"></div>
+  </div>
+  <p class="hint" id="hint">Fais un vœu, puis clique sur le gâteau pour souffler les bougies.</p>
+  <button class="link" id="relight" hidden>Rallumer les bougies</button>
+</section>
+
+<section class="gallery" aria-labelledby="gallery-title">
+  <h2 id="gallery-title">Nos beaux souvenirs 💖</h2>
+  <div class="gallery-frame" id="gallery" aria-label="Diaporama de souvenirs">
+    <div class="gallery-bg" id="gallery-bg-a"></div>
+    <div class="gallery-bg" id="gallery-bg-b"></div>
+    <div class="gallery-progress"><span></span></div>
+    <img class="gallery-slide active" src="images/WhatsApp%20Image%202026-11-21%20at%2013.22.34%20(1).jpeg" alt="Souvenir d’Amina 1 sur 10" fetchpriority="high">
+    <img class="gallery-slide" src="images/WhatsApp%20Image%202026-11-21%20at%2013.22.34.jpeg" alt="Souvenir d’Amina 2 sur 10" loading="lazy">
+    <img class="gallery-slide" src="images/WhatsApp%20Image%202026-11-21%20at%2013.22.35%20(1).jpeg" alt="Souvenir d’Amina 3 sur 10" loading="lazy">
+    <img class="gallery-slide" src="images/WhatsApp%20Image%202026-11-21%20at%2013.22.35%20(2).jpeg" alt="Souvenir d’Amina 4 sur 10" loading="lazy">
+    <img class="gallery-slide" src="images/WhatsApp%20Image%202026-11-21%20at%2013.22.35%20(3).jpeg" alt="Souvenir d’Amina 5 sur 10" loading="lazy">
+    <img class="gallery-slide" src="images/WhatsApp%20Image%202026-11-21%20at%2013.22.35%20(4).jpeg" alt="Souvenir d’Amina 6 sur 10" loading="lazy">
+    <img class="gallery-slide" src="images/WhatsApp%20Image%202026-11-21%20at%2013.22.35%20(5).jpeg" alt="Souvenir d’Amina 7 sur 10" loading="lazy">
+    <img class="gallery-slide" src="images/WhatsApp%20Image%202026-11-21%20at%2013.22.35.jpeg" alt="Souvenir d’Amina 8 sur 10" loading="lazy">
+    <img class="gallery-slide" src="images/WhatsApp%20Image%202026-11-21%20at%2013.22.36%20(1).jpeg" alt="Souvenir d’Amina 9 sur 10" loading="lazy">
+    <img class="gallery-slide" src="images/WhatsApp%20Image%202026-11-21%20at%2013.22.36.jpeg" alt="Souvenir d’Amina 10 sur 10" loading="lazy">
+  </div>
+  <div class="gallery-controls">
+    <button class="gallery-arrow" id="gallery-prev" type="button" aria-label="Photo précédente">‹</button>
+    <span class="gallery-count" id="gallery-count" aria-live="polite">1 / 10</span>
+    <button class="gallery-arrow" id="gallery-next" type="button" aria-label="Photo suivante">›</button>
+    <button class="gallery-toggle" id="gallery-toggle" type="button" aria-label="Mettre le diaporama en pause">Ⅱ</button>
+  </div>
+  <div class="gallery-dots" id="gallery-dots" aria-label="Choisir une photo"></div>
+</section>
+
+<section>
+  <div class="poem">
+    <h2>Un poème pour toi, Amina</h2>
+    <div class="stanza">
+      <div class="line">Aujourd’hui le ciel s’habille de lumière,</div>
+      <div class="line">Car c’est ton jour, ma chère cousine Amina.</div>
+      <div class="line">Que chaque heure t’apporte un rire, une prière,</div>
+      <div class="line">Et que la joie te suive pas à pas.</div>
+    </div>
+    <div class="stanza">
+      <div class="line">Que ton sourire, tel un soleil du Sénégal,</div>
+      <div class="line">Éclaire chaque chemin que tu vas traverser.</div>
+      <div class="line">Que tes rêves, grands et lumineux comme des étoiles,</div>
+      <div class="line">Prennent leur envol sans jamais se lasser.</div>
+    </div>
+    <div class="stanza">
+      <div class="line">Que la santé, la paix et la tendresse</div>
+      <div class="line">Habitent ta maison comme un jardin en fleurs.</div>
+      <div class="line">Que les jours à venir soient pleins de promesses,</div>
+      <div class="line">Et que chaque matin t’apporte du bonheur.</div>
+    </div>
+    <div class="stanza">
+      <div class="line">Joyeux anniversaire, Amina Sall !</div>
+      <div class="line">Que cette nouvelle année soit ta plus belle fête.</div>
+      <div class="line sign">Avec tout mon amour, ta famille 💖</div>
+    </div>
+  </div>
+</section>
+
+<footer><span>🎈</span><span>🎂</span><span>🎉</span><span>🎁</span><span>🎈</span></footer>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var cols=["#ff4f9a","#ffc83d","#2ee6c5","#7aa7ff","#ff8a3d","#c77dff"];
+  var rnd=function(a,b){return a+Math.random()*(b-a)};
+
+  /* Nom animé */
+  var nm=$("name");
+  "Amina Sall".split("").forEach(function(c,i){
+    var s=document.createElement("span");
+    if(c===" "){s.className="sp";s.innerHTML="&nbsp;"}else{s.textContent=c}
+    s.style.animationDelay=(i*0.12)+"s";nm.appendChild(s);
+  });
+
+  /* Étoiles et ballons */
+  for(var i=0;i<45;i++){var st=document.createElement("i");
+    st.style.cssText="left:"+rnd(0,100)+"%;top:"+rnd(0,100)+"%;animation-delay:"+rnd(0,3)+"s";$("stars").appendChild(st)}
+  for(var j=0;j<12;j++){var b=document.createElement("div");b.className="balloon";
+    var c=cols[j%cols.length];
+    b.style.cssText="left:"+rnd(2,94)+"%;background:radial-gradient(circle at 35% 30%,#fff8,"+c+" 60%);animation-duration:"+rnd(12,22)+"s;animation-delay:"+rnd(0,14)+"s";
+    $("balloons").appendChild(b)}
+
+  /* Diaporama des souvenirs */
+  var slides=Array.prototype.slice.call(document.querySelectorAll(".gallery-slide"));
+  var gallery=$("gallery"),bgs=[$("gallery-bg-a"),$("gallery-bg-b")],bgFlip=0;
+  var fxList=["fx-zoom","fx-left","fx-right","fx-rise","fx-circle","fx-flip","fx-blur"],fxIdx=0;
+  var galleryIndex=-1,galleryTimer=null;
+  var galleryDots=$("gallery-dots"),galleryToggle=$("gallery-toggle");
+  slides.forEach(function(slide,index){
+    var dot=document.createElement("button");
+    dot.className="gallery-dot";dot.type="button";
+    dot.setAttribute("aria-label","Afficher la photo "+(index+1));
+    dot.addEventListener("click",function(){showSlide(index);startGallery()});
+    galleryDots.appendChild(dot);
+  });
+  function restartBar(){
+    gallery.classList.remove("playing");void gallery.offsetWidth;gallery.classList.add("playing");
+  }
+  function showSlide(index){
+    var prev=galleryIndex,n=slides.length;
+    var next=(index+n)%n;
+    if(next===prev)return;
+    galleryIndex=next;
+    slides.forEach(function(s,i){
+      s.classList.remove("active","leaving");
+      fxList.forEach(function(f){s.classList.remove(f)});
+      s.setAttribute("aria-hidden",i===next?"false":"true");
+      galleryDots.children[i].classList.toggle("active",i===next);
+      galleryDots.children[i].setAttribute("aria-current",i===next?"true":"false");
+    });
+    if(prev>-1){
+      var old=slides[prev];old.classList.add("leaving");
+      setTimeout(function(){old.classList.remove("leaving")},1000);
+    }
+    var cur=slides[next];
+    void cur.offsetWidth;
+    cur.classList.add("active",fxList[fxIdx++%fxList.length]);
+    cur.loading="eager";slides[(next+1)%n].loading="eager";
+    bgFlip=1-bgFlip;
+    bgs[bgFlip].style.backgroundImage='url("'+cur.src+'")';
+    bgs[bgFlip].classList.add("on");bgs[1-bgFlip].classList.remove("on");
+    $("gallery-count").textContent=(next+1)+" / "+n;
+    if(galleryTimer)restartBar();
+  }
+  function startGallery(){
+    clearInterval(galleryTimer);
+    galleryToggle.textContent="Ⅱ";
+    galleryToggle.setAttribute("aria-label","Mettre le diaporama en pause");
+    galleryTimer=setInterval(function(){showSlide(galleryIndex+1)},5000);
+    restartBar();
+  }
+  function pauseGallery(){
+    clearInterval(galleryTimer);galleryTimer=null;
+    gallery.classList.remove("playing");
+    galleryToggle.textContent="▶";
+    galleryToggle.setAttribute("aria-label","Reprendre le diaporama");
+  }
+  $("gallery-prev").addEventListener("click",function(){showSlide(galleryIndex-1);startGallery()});
+  $("gallery-next").addEventListener("click",function(){showSlide(galleryIndex+1);startGallery()});
+  galleryToggle.addEventListener("click",function(){if(galleryTimer)pauseGallery();else startGallery()});
+  gallery.addEventListener("mouseenter",pauseGallery);
+  gallery.addEventListener("mouseleave",function(){if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches)startGallery()});
+  gallery.addEventListener("focusin",pauseGallery);
+  gallery.addEventListener("focusout",function(e){if(!e.relatedTarget||!e.currentTarget.contains(e.relatedTarget))startGallery()});
+  /* Balayage au doigt */
+  var tx=null;
+  gallery.addEventListener("touchstart",function(e){tx=e.touches[0].clientX},{passive:true});
+  gallery.addEventListener("touchend",function(e){
+    if(tx===null)return;var dx=e.changedTouches[0].clientX-tx;tx=null;
+    if(Math.abs(dx)>40){showSlide(galleryIndex+(dx<0?1:-1));startGallery()}
+  },{passive:true});
+  showSlide(0);
+
+  /* Canvas : confettis + feux d'artifice */
+  var cv=$("fx"),ctx=cv.getContext("2d"),P=[],W,H;
+  function size(){W=cv.width=innerWidth;H=cv.height=innerHeight}
+  size();addEventListener("resize",size);
+  function confetti(x,y,n){for(var k=0;k<n;k++){var a=rnd(-Math.PI,0),v=rnd(4,13);
+    P.push({t:"c",x:x,y:y,vx:Math.cos(a)*v,vy:Math.sin(a)*v,g:.22,r:rnd(4,9),rot:rnd(0,6),vr:rnd(-.3,.3),col:cols[k%cols.length],life:rnd(110,220)})}}
+  function firework(x,y){var col=cols[Math.floor(rnd(0,cols.length))];
+    for(var k=0;k<46;k++){var a=k/46*Math.PI*2,v=rnd(2,6.5);
+      P.push({t:"s",x:x,y:y,vx:Math.cos(a)*v,vy:Math.sin(a)*v,g:.06,r:rnd(1.5,3),col:k%3?col:"#fff",life:rnd(45,80)})}}
+  function frame(){
+    ctx.clearRect(0,0,W,H);
+    for(var k=P.length-1;k>=0;k--){var p=P[k];
+      p.x+=p.vx;p.y+=p.vy;p.vy+=p.g;p.vx*=.985;p.life--;
+      if(p.life<=0||p.y>H+20){P.splice(k,1);continue}
+      ctx.globalAlpha=Math.min(1,p.life/40);ctx.fillStyle=p.col;
+      if(p.t==="c"){p.rot+=p.vr;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot);ctx.fillRect(-p.r,-p.r/2,p.r*2,p.r);ctx.restore()}
+      else{ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);ctx.fill()}
+    }
+    ctx.globalAlpha=1;requestAnimationFrame(frame);
+  }
+  frame();
+  setInterval(function(){if(!document.hidden&&$("intro").classList.contains("gone"))
+    P.push({t:"c",x:rnd(0,W),y:-10,vx:rnd(-1,1),vy:rnd(1,3),g:.02,r:rnd(3,6),rot:0,vr:rnd(-.2,.2),col:cols[Math.floor(rnd(0,6))],life:400})},260);
+  document.addEventListener("click",function(e){if(!e.target.closest("button,.cake"))firework(e.clientX,e.clientY)});
+
+  /* Musique : Joyeux anniversaire (Web Audio) */
+  var AC,master,playing=false,timer;
+  var N=[[392,.75],[392,.25],[440,1],[392,1],[523,1],[494,2],[392,.75],[392,.25],[440,1],[392,1],[587,1],[523,2],
+         [392,.75],[392,.25],[784,1],[659,1],[523,1],[494,1],[440,1],[698,.75],[698,.25],[659,1],[523,1],[587,1],[523,2]];
+  function tone(f,t,d,type,vol){var o=AC.createOscillator(),g=AC.createGain();
+    o.type=type;o.frequency.value=f;o.connect(g);g.connect(master);
+    g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol,t+.03);g.gain.exponentialRampToValueAtTime(.0001,t+d);
+    o.start(t);o.stop(t+d+.05)}
+  function playSong(){
+    if(!playing)return;var beat=.5,t=AC.currentTime+.1,total=0;
+    N.forEach(function(n){tone(n[0],t+total*beat,n[1]*beat*1.1,"triangle",.35);tone(n[0]*2,t+total*beat,n[1]*beat,"sine",.08);total+=n[1]});
+    for(var k=0;k<total;k+=3){var root=(k%6===0)?131:196;tone(root,t+k*beat,beat*2.6,"sine",.22)}
+    timer=setTimeout(playSong,(total*beat+1.2)*1000);
+  }
+  function startMusic(){
+    try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();
+      if(!master){master=AC.createGain();master.gain.value=.7;master.connect(AC.destination)}
+      AC.resume();playing=true;clearTimeout(timer);playSong();
+      $("mute").classList.add("on");$("mute").textContent="🔊"}catch(e){}
+  }
+  $("mute").addEventListener("click",function(){
+    if(playing){playing=false;clearTimeout(timer);master.gain.value=0;$("mute").textContent="🔇"}
+    else{master.gain.value=.7;startMusic()}
+  });
+
+  /* Ouverture du cadeau */
+  function openGift(){
+    $("intro").classList.add("gone");startMusic();
+    if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches)startGallery();
+    confetti(W/2,H*.6,160);
+    [0,350,700,1050].forEach(function(d){setTimeout(function(){firework(rnd(W*.15,W*.85),rnd(H*.15,H*.5))},d)});
+  }
+  $("open").addEventListener("click",openGift);$("gift").addEventListener("click",openGift);
+
+  /* Gâteau */
+  var cd=$("candles");
+  for(var q=0;q<5;q++){var c=document.createElement("div");c.className="candle";c.innerHTML='<div class="flame"></div>';cd.appendChild(c)}
+  function blow(){
+    var cs=cd.querySelectorAll(".candle:not(.out)");if(!cs.length)return;
+    cs.forEach(function(c,i){setTimeout(function(){c.classList.add("out")},i*180)});
+    setTimeout(function(){
+      var r=$("cake").getBoundingClientRect();
+      confetti(r.left+r.width/2,r.top,140);firework(r.left+r.width/2,r.top-80);
+      $("hint").textContent="Bravo ! Que tous tes vœux se réalisent, Amina ✨";$("relight").hidden=false;
+    },1000);
+  }
+  $("cake").addEventListener("click",blow);
+  $("cake").addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();blow()}});
+  $("relight").addEventListener("click",function(){
+    cd.querySelectorAll(".candle").forEach(function(c){c.classList.remove("out")});
+    $("hint").textContent="Fais un vœu, puis clique sur le gâteau pour souffler les bougies.";$("relight").hidden=true;
+  });
+
+  /* Poème : apparition ligne par ligne */
+  var lines=document.querySelectorAll(".line");
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){var el=e.target,i=Array.prototype.indexOf.call(el.parentNode.children,el);
+        el.style.transitionDelay=(i*0.45)+"s";el.classList.add("in");io.unobserve(el)}})},{threshold:.4});
+    lines.forEach(function(l){io.observe(l)});
+  }else{lines.forEach(function(l){l.classList.add("in")})}
+})();
+</script>
+</body>
+</html>
